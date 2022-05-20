@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adding storage on Amazon CloudOps Linux Workshop</title>
+    <link>/4.adding_storage.html</link>
+    <description>Recent content in Adding storage on Amazon CloudOps Linux Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/4.adding_storage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to EBS</title>
+      <link>/4.adding_storage/intro_ebs.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/4.adding_storage/intro_ebs.html</guid>
+      <description>Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices. You can mount these volumes as devices on your instances.
+EBS volumes that are attached to an instance are exposed as storage volumes that persist independently from the life of the instance.
+You can create a file system on top of these volumes, or use them in any way you would use a block device (such as a hard drive).</description>
+    </item>
+    
+    <item>
+      <title>Create an Amazon EBS volume</title>
+      <link>/4.adding_storage/create_volume.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/4.adding_storage/create_volume.html</guid>
+      <description>In this tutorial, you’ll create an Amazon Elastic Block Store (Amazon EBS) volume.
+Follow &amp;ldquo;Create an empty volume&amp;rdquo; using these instructions. Use the following parameters:
+You can find the availability zone for your instance on the EC2 details page under the Security tab.
+    Parameter Value     Region us-east-1   Volume Type General Purpose SSD (gp2)   Size (GiB) 10   Availability Zone (same as the EC2 instance)   Snapshot ID (default empty value)   Encryption (default encryption not marked)   Tags Key=Name, Value=your last name    </description>
+    </item>
+    
+    <item>
+      <title>Attach volume to the instance</title>
+      <link>/4.adding_storage/attach_volume.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/4.adding_storage/attach_volume.html</guid>
+      <description>In this tutorial, you’ll attach the Amazon Elastic Block Store (Amazon EBS) volume created in the previous step to your existent EC2 instance.
+Follow these instructions. Use the following parameters:
+   Parameter Value     Region us-east-1   Volume (volume from previous step)   Instance (existing EC2 instance)   Device (leave default)    </description>
+    </item>
+    
+    <item>
+      <title>Formatting and mounting</title>
+      <link>/4.adding_storage/mouting_volume.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/4.adding_storage/mouting_volume.html</guid>
+      <description>The EBS volume is attached to the EC2 instance. However, you need to make the volume available to use by formatting and mounting it. There are three steps here:
+ Format the volume with mkfs Create a mount point Mount the volume  graph LR; A[Format the volume] --|Verify with lsblk -fs| B[Create the mount point] B --|Verify with ls -lah /| C[Mount the volume] C --|Verify with mount| E[Done]  First, connect to the EC2 instance that you created earlier as you did in the Logging in section.</description>
+    </item>
+    
+    <item>
+      <title>Mounting on reboot</title>
+      <link>/4.adding_storage/mounting_on_reboot.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/4.adding_storage/mounting_on_reboot.html</guid>
+      <description>The mount point we did in the previous section is not preserved after rebooting the EC2 instance. In order to do so, we need to add an entry for the device to the /etc/fstab file. This file contains all the disks and partitions, and describes how they should be initialized into the filesystem.
+First, we&amp;rsquo;ll create a backup of the /etc/fstab file.
+It is a good practice to create a backup of the known good configuration file before making edits.</description>
+    </item>
+    
+  </channel>
+</rss>

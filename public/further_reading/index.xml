@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Further Reading on Amazon CloudOps Linux Workshop</title>
+    <link>/further_reading.html</link>
+    <description>Recent content in Further Reading on Amazon CloudOps Linux Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/further_reading/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS CLI</title>
+      <link>/further_reading/cli.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/further_reading/cli.html</guid>
+      <description>You can accomplish all of the tasks in this workshop using the CLI, or Command Line Interface. As an aspiring CloudOps admin, it would be a good idea to be familiar with the CLI.
+Install and configure the CLI here.
+See if you can perform these tasks with the CLI:
+ Launch an EC2 instance Configure the security group Create an EBS volume Attach the volume to an EC2 instance Delete the EBS volume Terminate the EC2 instance  </description>
+    </item>
+    
+    <item>
+      <title>Automation</title>
+      <link>/further_reading/automating.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/further_reading/automating.html</guid>
+      <description>All of the tasks we completed to launch an EC2 instance and install Apache httpd can be automated with a tool called Cloudformation. What would we have to do?
+ Launch an EC2 instance Install the Apache web server (use userdata) Add some content Configure the security group Add and configure storage Move the web content Configure Apache httpd to point to the new web location  Download and launch this template in the AWS Cloudformation Console to peform all of the steps in exercises 1-5.</description>
+    </item>
+    
+    <item>
+      <title>Storage Management in Linux</title>
+      <link>/further_reading/storage_management.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/further_reading/storage_management.html</guid>
+      <description>Check out the Linux Storage Management Hands-on Lab for a detailed walkthrough of managing partitions on a Linux machine.</description>
+    </item>
+    
+    <item>
+      <title>User Management in Linux</title>
+      <link>/further_reading/user_management.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/further_reading/user_management.html</guid>
+      <description>Check out the Managing Users in Linux Hands-on Lab for a detailed walkthrough of managing users on a Linux machine.</description>
+    </item>
+    
+    <item>
+      <title>Using a Text Editor in Linux</title>
+      <link>/further_reading/text_editor.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/further_reading/text_editor.html</guid>
+      <description>Check out the command-line text editors in Linux for a couple of options to edit files on a Linux machine.
+Or try to learn VIM for the last time!</description>
+    </item>
+    
+    <item>
+      <title>Creating a DevOps pipeline</title>
+      <link>/further_reading/dev_ops.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/further_reading/dev_ops.html</guid>
+      <description>Check out the ACloudGuru DevOps Pipeline lab to learn how to create a DevOps pipeline.</description>
+    </item>
+    
+    <item>
+      <title>Git basics</title>
+      <link>/further_reading/github_basics.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/further_reading/github_basics.html</guid>
+      <description>Check out this article on Git basics.</description>
+    </item>
+    
+  </channel>
+</rss>

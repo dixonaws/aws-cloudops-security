@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Launching an EC2 Instance on Amazon CloudOps Linux Workshop</title>
+    <link>/1.launching_an_ec2_instance.html</link>
+    <description>Recent content in Launching an EC2 Instance on Amazon CloudOps Linux Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/1.launching_an_ec2_instance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Global Infrastructure</title>
+      <link>/1.launching_an_ec2_instance/global_infra.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1.launching_an_ec2_instance/global_infra.html</guid>
+      <description>It is helpful to have some background on the AWS Global Infrastructure before we launch a Linux instance in AWS.
+AWS currently has 24 regions in its global infrastructure. Each of these regions contains at least two Availability Zones. You can think of an Availability Zone as a collection of one or more physical datacenters. There are 77 Availability Zones throughout the world.
+We&amp;rsquo;ll be using the us-east-1 region in this session.</description>
+    </item>
+    
+    <item>
+      <title>Launch the Instance</title>
+      <link>/1.launching_an_ec2_instance/launch.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1.launching_an_ec2_instance/launch.html</guid>
+      <description>In this tutorial, you&amp;rsquo;ll launch an EC2 (Elastic Compute Cloud) instance into a region of AWS.
+Follow Step 1: Launch an instance using these instructions. Use the following parameters:
+   Parameter Value     Region us-east-1   Amazon Machine Image Amazon Linux 2 AMI, SSD Volume Type, 64-bit (x86)   Instance type t2.micro (free tier eligible)   Instance Details (accept all defaults)   Storage (accept default 8GB SSD volume)   Tags Key=Name, Value=your last name   Security Group SSH, Source=My IP   Key Pair Create a new key pair and name it: your_last_name-us-east-1.</description>
+    </item>
+    
+  </channel>
+</rss>

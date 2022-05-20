@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cleaning Up on Amazon CloudOps Linux Workshop</title>
+    <link>/6.cleaning_up.html</link>
+    <description>Recent content in Cleaning Up on Amazon CloudOps Linux Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/6.cleaning_up/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clean up your volume</title>
+      <link>/6.cleaning_up/deleting_volume.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/6.cleaning_up/deleting_volume.html</guid>
+      <description>We&amp;rsquo;ll start by detaching the EBS volume from the EC2 instance.
+First, stop the web server with the following command:
+sudo systemctl stop httpd Then, unmount the volume from your EC2 instance:
+sudo umount -d /dev/xvdf Then, detach the volume from the instance as explained in &amp;ldquo;Step 2: Detach the volume from the instance&amp;rdquo; of these these instructions.
+Once the volume is detached from the EC2 Instance, follow these instructions to delete the volume.</description>
+    </item>
+    
+    <item>
+      <title>Clean up your instance</title>
+      <link>/6.cleaning_up/deleting_instance.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/6.cleaning_up/deleting_instance.html</guid>
+      <description>Now, let&amp;rsquo;s terminate the EC2 instance by following these instructions.
+Check that both the EBS volume and the EC2 instance are terminated.</description>
+    </item>
+    
+    <item>
+      <title>Verify Billing Information</title>
+      <link>/6.cleaning_up/verify_billing.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/6.cleaning_up/verify_billing.html</guid>
+      <description>You should also verify billing information in the billing console to ensure that you are not liable for any charges.
+Follow these instructions to activate your user for the billing console.
+Click the username link at the top of the AWS Console and then click My Billing Dashboard
+You should see your current month-to-date balance as some amount less than $1, and your forecasted spend less than $10.</description>
+    </item>
+    
+  </channel>
+</rss>

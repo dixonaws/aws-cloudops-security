@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta property="og:title" content="linuxworkshop.aws-cloudops.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://linuxworkshop.aws-cloudops.com" />
+    <meta property="og:image" content="https://linuxworkshop.aws-cloudops.com/images/TuxBadge.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.92.0" />
+    <meta name="description" content="Amazon CloudOps Linux Workshop">
+<meta name="author" content="John Dixon, Claudiu Bota">
+
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+
+    <title>Formatting and mounting :: Amazon CloudOps Linux Workshop</title>
+
+    
+    <link href="../css/nucleus.css?1642751695" rel="stylesheet">
+    <link href="../css/all.css?1642751695" rel="stylesheet">
+    <link href="../css/hybrid.css?1642751695" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1642751695" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1642751695" rel="stylesheet">
+    <link href="../css/auto-complete.css?1642751695" rel="stylesheet">
+    <link href="../css/theme.css?1642751695" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1642751695" rel="stylesheet">
+    <link href="../css/jquery-ui.min.css?1642751695" rel="stylesheet">
+    
+      <link href="../css/theme-mine.css?1642751695" rel="stylesheet">
+    
+
+    <script src="../js/jquery-3.3.1.min.js?1642751695"></script>
+    <script src="../js/jquery-ui-1.12.1.min.js?1642751695"></script>
+
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="../4.adding_storage/mouting_volume.html">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="../" title="Go home"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="60%" style="padding:20px 0px;"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg></a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js?1642751695"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1642751695"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="../js/search.js?1642751695"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction.html" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../introduction.html">
+          Introduction
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction/prereqs.html" title="Prerequisites" class="dd-item ">
+        <a href="../introduction/prereqs.html">
+        Prerequisites
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/introduction/whylinux.html" title="Why Linux? Who uses it?" class="dd-item ">
+        <a href="../introduction/whylinux.html">
+        Why Linux? Who uses it?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/1.launching_an_ec2_instance.html" title="Launching an EC2 Instance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../1.launching_an_ec2_instance.html">
+          <b>1. </b>Launching an EC2 Instance
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.launching_an_ec2_instance/global_infra.html" title="Global Infrastructure" class="dd-item ">
+        <a href="../1.launching_an_ec2_instance/global_infra.html">
+        Global Infrastructure
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.launching_an_ec2_instance/launch.html" title="Launch the Instance" class="dd-item ">
+        <a href="../1.launching_an_ec2_instance/launch.html">
+        Launch the Instance
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/2.logging_in.html" title="Logging In" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../2.logging_in.html">
+          <b>2. </b>Logging In
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/2.logging_in/macos.html" title="macOS" class="dd-item ">
+        <a href="../2.logging_in/macos.html">
+        macOS
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/2.logging_in/windows.html" title="Windows" class="dd-item ">
+        <a href="../2.logging_in/windows.html">
+        Windows
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/3.installing_a_webserver.html" title="Installing a Web Server" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../3.installing_a_webserver.html">
+          <b>3. </b>Installing a Web Server
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/3.installing_a_webserver/install_httpd.html" title="Install Apache httpd" class="dd-item ">
+        <a href="../3.installing_a_webserver/install_httpd.html">
+        Install Apache httpd
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/3.installing_a_webserver/add_content.html" title="Add Content" class="dd-item ">
+        <a href="../3.installing_a_webserver/add_content.html">
+        Add Content
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/3.installing_a_webserver/config_network.html" title="Configure the Network" class="dd-item ">
+        <a href="../3.installing_a_webserver/config_network.html">
+        Configure the Network
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/4.adding_storage.html" title="Adding storage" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../4.adding_storage.html">
+          <b>4. </b>Adding storage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/4.adding_storage/intro_ebs.html" title="Introduction to EBS" class="dd-item ">
+        <a href="../4.adding_storage/intro_ebs.html">
+        Introduction to EBS
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/4.adding_storage/create_volume.html" title="Create an Amazon EBS volume" class="dd-item ">
+        <a href="../4.adding_storage/create_volume.html">
+        Create an Amazon EBS volume
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/4.adding_storage/attach_volume.html" title="Attach volume to the instance" class="dd-item ">
+        <a href="../4.adding_storage/attach_volume.html">
+        Attach volume to the instance
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/4.adding_storage/mouting_volume.html" title="Formatting and mounting" class="dd-item active">
+        <a href="../4.adding_storage/mouting_volume.html">
+        Formatting and mounting
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/4.adding_storage/mounting_on_reboot.html" title="Mounting on reboot" class="dd-item ">
+        <a href="../4.adding_storage/mounting_on_reboot.html">
+        Mounting on reboot
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/5.moving_the_web_root.html" title="Moving the web root" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../5.moving_the_web_root.html">
+          <b>5. </b>Moving the web root
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/5.moving_the_web_root/moving_the_web_root.html" title="Moving the web root" class="dd-item ">
+        <a href="../5.moving_the_web_root/moving_the_web_root.html">
+        Moving the web root
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/6.cleaning_up.html" title="Cleaning Up" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../6.cleaning_up.html">
+          <b>6. </b>Cleaning Up
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6.cleaning_up/deleting_volume.html" title="Clean up your volume" class="dd-item ">
+        <a href="../6.cleaning_up/deleting_volume.html">
+        Clean up your volume
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6.cleaning_up/deleting_instance.html" title="Clean up your instance" class="dd-item ">
+        <a href="../6.cleaning_up/deleting_instance.html">
+        Clean up your instance
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6.cleaning_up/verify_billing.html" title="Verify Billing Information" class="dd-item ">
+        <a href="../6.cleaning_up/verify_billing.html">
+        Verify Billing Information
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/further_reading.html" title="Further Reading" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../further_reading.html">
+          Further Reading
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/further_reading/cli.html" title="AWS CLI" class="dd-item ">
+        <a href="../further_reading/cli.html">
+        AWS CLI
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/further_reading/automating.html" title="Automation" class="dd-item ">
+        <a href="../further_reading/automating.html">
+        Automation
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/further_reading/storage_management.html" title="Storage Management in Linux" class="dd-item ">
+        <a href="../further_reading/storage_management.html">
+        Storage Management in Linux
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/further_reading/user_management.html" title="User Management in Linux" class="dd-item ">
+        <a href="../further_reading/user_management.html">
+        User Management in Linux
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/further_reading/text_editor.html" title="Using a Text Editor in Linux" class="dd-item ">
+        <a href="../further_reading/text_editor.html">
+        Using a Text Editor in Linux
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/further_reading/dev_ops.html" title="Creating a DevOps pipeline" class="dd-item ">
+        <a href="../further_reading/dev_ops.html">
+        Creating a DevOps pipeline
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/further_reading/github_basics.html" title="Git basics" class="dd-item ">
+        <a href="../further_reading/github_basics.html">
+        Git basics
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/dixonaws/aws-cloudops-linux"><i class='fab fa-github fa-lg'></i> Github Repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://twitter.com/intent/user?screen_name=dixonjp90"><i class='fab fa-twitter fa-lg'></i> @dixonjp90</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.linkedin.com/in/jpd44/"><i class='fab fa-linkedin fa-lg'></i> John Dixon</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.linkedin.com/in/claudiu-bota-6b400315a/"><i class='fab fa-linkedin fa-lg'></i> Claudiu Bota</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+
+    
+
+    <a href="https://aws.amazon.com/privacy/?nc1=f_pr">Privacy</a> | <a href="https://aws.amazon.com/terms/?nc1=f_pr">Site Terms</a> | © 2022, Amazon Web Services, Inc. or its affiliates. All rights reserved. 
+
+</left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/dixonaws/aws-cloudops-linux/edit/main/content/4.adding_storage/mouting_volume.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../'>Amazon CloudOps Linux Workshop</a> > <a href='../4.adding_storage.html'>Adding storage</a> > Formatting and mounting
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Formatting and mounting</h1>
+          
+
+        
+
+
+<p>The EBS volume is attached to the EC2 instance. However, you need to make the volume available to use by formatting and mounting it. There
+are three steps here:</p>
+<ol>
+<li>Format the volume with <code>mkfs</code></li>
+<li>Create a mount point</li>
+<li>Mount the volume</li>
+</ol>
+
+<div class="mermaid" align="left">
+graph LR;
+    A[Format the volume] -->|Verify with lsblk -fs| B[Create the mount point]
+    B -->|Verify with ls -lah /| C[Mount the volume]
+    C -->|Verify with mount| E[Done]
+</div>
+
+<p>First, connect to the EC2 instance that you created earlier as you did in the <em>Logging in</em> section.</p>
+<p>Check the available disk devices with the <code>lsblk</code> command to ensure that you have attached the volume to your instance.</p>
+<p>It will return something similar to:</p>
+<pre tabindex="0"><code>NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   8G  0 disk 
+└─xvda1 202:1    0   8G  0 part /
+xvdf    202:80   0  10G  0 disk 
+</code></pre><p>The root device is <em>/dev/xvda</em>. The EBS volume that we just created and attached
+<em>/dev/xvdf</em>.</p>
+<p>The attached volume is empty and you must create a file system on it before you can mount and use it. Issue the following command:</p>
+<pre tabindex="0"><code class="language-commandline" data-lang="commandline">sudo mkfs -t xfs /dev/xvdf
+</code></pre>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Verification steps
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>You can also use the <code>lsblk</code> command to list the filesystems on a disk. Issue the following command: <code>lsblk -fs</code>. You
+should see some output similar to the screenshot below. If <em>xvdf</em> is listed with the <em>xfs</em> filesystem, then you have correctly formatted the volume.
+<img src="../images/verify_fs.png" alt=""></p>
+
+    </div>
+</div>
+<p>The next step is to create a mount point directory for the volume. This mount
+point is where we will read and write files to the volume:</p>
+<pre tabindex="0"><code class="language-commandline" data-lang="commandline">sudo mkdir /data
+</code></pre>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Verification steps
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>List the directory to make sure you created it in the right place. Issue the following command to list the directory: <code>ls -lah /</code>.
+You will see a listing of the root directory or filesystem. FYI, &ldquo;/&rdquo; is known as the root filesystem, not to be confused with the <em>root</em> user.
+Make sure that the <em>data</em> directory exists here, indicated in the screenshot above by the entry circled in red. This entry indicates that the
+<em>data</em> is a directory owned by the root user (and root group) that was created on 19 Feb at 11:52 UTC. The string _drwxr-xr-x indicates that
+the directory is read-write-execute for the owner, read-execute for the group (root) and read-execute for everyone else. These permissions
+can be encoded as <em>755</em> where the first number (7) corresponds to the owner&rsquo;s permissions, the second (5) corresponds to the group permissions, and the third (5)
+corresponds to permissions for everyone else. Read permissions are represeted by the number 4, write permissions by the number 2, and execute permissions
+by the number 1. So, permissions of 7 are equal to read-write-execute (4+2+1). For directories, execute means that a user can enter the directory
+and list contents.
+<img src="../images/data_directory.png" alt="Data directory"></p>
+
+    </div>
+</div>
+<p>Finally, we mount the volume at the directory:</p>
+<pre tabindex="0"><code class="language-commandline" data-lang="commandline">sudo mount /dev/xvdf /data
+</code></pre>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Verification steps
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>To verify that the volume is mounted, you can use the <em>mount</em> command
+without any arguments. The last line in this sample output shows that the device
+named <em>xvdf</em> is mounted on the <em>data</em> directory.</p>
+<pre tabindex="0"><code class="language-commandline" data-lang="commandline">[ec2-user@ip-123-45-67-89 ~]$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+devtmpfs on /dev type devtmpfs (rw,nosuid,size=492684k,nr_inodes=123171,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+/dev/xvda1 on / type xfs (rw,noatime,attr2,inode64,noquota)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=31,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=12416)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,pagesize=2M)
+sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=100692k,mode=700,uid=1000,gid=1000)
+/dev/xvdf on /data type xfs (rw,relatime,attr2,inode64,noquota)
+[ec2-user@ip-172-31-60-29 ~]$ 
+</code></pre><p>You could also use the <em>df</em> command to list the currently mounted filesystems (df is the <em>disk free</em> command, and the -h option is for <em>human readable</em>):</p>
+<pre tabindex="0"><code class="language-commandline" data-lang="commandline">[ec2-user@ip-172-31-60-29 ~]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        482M     0  482M   0% /dev
+tmpfs           492M     0  492M   0% /dev/shm
+tmpfs           492M  420K  492M   1% /run
+tmpfs           492M     0  492M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  1.5G  6.6G  18% /
+tmpfs            99M     0   99M   0% /run/user/1000
+/dev/xvdf        10G   43M   10G   1% /data
+</code></pre>
+    </div>
+</div>
+<p>At this point, we have created a new EBS volume, formatted it, and mounted it in the Linux instance.
+There is one more step to complete to configure the system to mount the new volume at boot time. Proceed to
+the next section to configure the filesystem table.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../4.adding_storage/attach_volume.html" title="Attach volume to the instance"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../4.adding_storage/mounting_on_reboot.html" title="Mounting on reboot" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js?1642751695"></script>
+    <script src="../js/perfect-scrollbar.min.js?1642751695"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1642751695"></script>
+    <script src="../js/jquery.sticky.js?1642751695"></script>
+    <script src="../js/featherlight.min.js?1642751695"></script>
+    <script src="../js/highlight.pack.js?1642751695"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js?1642751695"></script>
+    <script src="../js/learn.js?1642751695"></script>
+    <script src="../js/hugo-learn.js?1642751695"></script>
+
+    <link href="../mermaid/mermaid.css?1642751695" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js?1642751695"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

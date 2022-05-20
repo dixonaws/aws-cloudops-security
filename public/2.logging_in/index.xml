@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logging In on Amazon CloudOps Linux Workshop</title>
+    <link>/2.logging_in.html</link>
+    <description>Recent content in Logging In on Amazon CloudOps Linux Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/2.logging_in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS</title>
+      <link>/2.logging_in/macos.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/2.logging_in/macos.html</guid>
+      <description>macOS Terminal Open a Terminal session and execute the following command, substituting the values for your_private_key.pem and your_host_public_ip with the ones from Step 1. As for the private key, you should have been given an option to download this file when you launched the instance.
+This command will establish an SSH connection to your server, logging in with the user ec2-user, which is the default on Amazon Linux 2.
+ssh -i &amp;lt;your_private_key.</description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>/2.logging_in/windows.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/2.logging_in/windows.html</guid>
+      <description>Windows PuTTY To log into the EC2 instance from a Windows OS, follow sections &amp;ldquo;Convert your private key using PuTTYgen&amp;rdquo; and &amp;ldquo;Connect to your Linux instance&amp;rdquo; from these instructions.
+Use ec2-user for my-instance-user-name in the instructions.</description>
+    </item>
+    
+  </channel>
+</rss>

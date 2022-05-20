@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installing a Web Server on Amazon CloudOps Linux Workshop</title>
+    <link>/3.installing_a_webserver.html</link>
+    <description>Recent content in Installing a Web Server on Amazon CloudOps Linux Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/3.installing_a_webserver/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Apache httpd</title>
+      <link>/3.installing_a_webserver/install_httpd.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/3.installing_a_webserver/install_httpd.html</guid>
+      <description>In this section, we&amp;rsquo;ll use the yum package manager to install a popular open-source web server, Apache httpd. Start connecting to the EC2 instance that you created earlier
+Get the latest bug fixes and security updates by updating the software on your EC2 instance. To do this, use the following command: sudo is Superuser Do - this command allows normal users to run commands as root (the superuser). Installing software is one common task for the superuser (usually).</description>
+    </item>
+    
+    <item>
+      <title>Add Content</title>
+      <link>/3.installing_a_webserver/add_content.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/3.installing_a_webserver/add_content.html</guid>
+      <description>By default, Apache httpd stores web content in the /var/www directory. To allow the ec2-user user to manage files in the default root directory for your Apache web server, modify the ownership and permissions of the /var/www directory. In this tutorial, you add a group named www to your EC2 instance and add the ec2-user user as a member of that group. Then you give that group ownership of the /var/www directory and add write permissions for the group.</description>
+    </item>
+    
+    <item>
+      <title>Configure the Network</title>
+      <link>/3.installing_a_webserver/config_network.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/3.installing_a_webserver/config_network.html</guid>
+      <description>We&amp;rsquo;ll have to open port 80 on the web server so that you can access it from the internet. We do this by configuring a security group rule on the AWS console.
+ Click on your instance in the EC2 console. Then, select the Security tab in the window below. Click to open the Security Group. It should be named something like sg-0fed659811d69a592 (launch-wizard-81). In the Security Group console, click Edit Inbound Rules Click Add Rule Add a rule for Port Range = 80 and Source = My IP Click Save Rules  You can now test that your web server is properly installed and started.</description>
+    </item>
+    
+  </channel>
+</rss>

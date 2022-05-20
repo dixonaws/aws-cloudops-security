@@ -1,0 +1,253 @@
+[
+{
+	"uri": "/",
+	"title": "Amazon CloudOps Linux Workshop",
+	"tags": [],
+	"description": "",
+	"content": "Welcome Students! Amazon CloudOps Linux Workshop In this workshop, we will walk through the fundamentals of Linux server administration as a part of the AWS Cloud Operations course. By the end of this two-session module, you will be able to perform basic Linux and AWS administration tasks as a preparation for the following AWS Cloud Administrator bootcamp. Depending on your level of experience, you may want to have a look at the Further Reading section to learn more about Linux administration.  We\u0026rsquo;ll have two instructor-led sessions and two \u0026ldquo;office hours\u0026rdquo; sessions. You should expect to get through the basics - Exercises 1 and 2 - during the first session. Exercises 3, 4, and 5 are a bit more challenging. Work through them and bring questions during the instructor-led sessions or office hours sessions.\nYour Tourguides:           John Dixon\nSolutions Architect, AWS\nMünchen, Germany Claudiu Bota\nSolutions Architect, AWS\nMadrid, Spain Tux\nLinux Mascot\nUnknown    "
+},
+{
+	"uri": "/introduction/prereqs.html",
+	"title": "Prerequisites",
+	"tags": [],
+	"description": "",
+	"content": "You\u0026rsquo;ll need to setup your laptop with various tools in order to complete the labs in this module.\n AWS Account Administrative access to your laptop (macOS or Windows) Amazon Chime client for Windows or macOS PuTTY installed and working (if you use Windows) Your own Github account and a git client Slack  "
+},
+{
+	"uri": "/introduction/whylinux.html",
+	"title": "Why Linux? Who uses it?",
+	"tags": [],
+	"description": "",
+	"content": "   Linux in the datacenter Linux on IoT devices Linux on planes Linux on phones            From Wikipedia: Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution.\nDistributions include the Linux kernel and supporting system software and libraries, many of which are provided by the GNU Project. Many Linux distributions use the word \u0026ldquo;Linux\u0026rdquo; in their name, but the Free Software Foundation uses the name GNU/Linux to emphasize the importance of GNU software, causing some controversy.\nPopular Linux distributions include Debian, Fedora, and Ubuntu, CentOS. Commercial distributions include Red Hat Enterprise Linux and SUSE Linux Enterprise Server. Desktop Linux distributions include a windowing system such as X11 or Wayland, and a desktop environment such as GNOME or KDE Plasma. Distributions intended for servers may omit graphics altogether, or include a solution stack such as LAMP. Because Linux is freely redistributable, anyone may create a distribution for any purpose.\nLinux was originally developed for personal computers based on the Intel x86 architecture, but has since been ported to more platforms than any other operating system. Because of the dominance of Android on smartphones, Linux also has the largest installed base of all general-purpose operating systems. Although it is used by only around 2.3 percent of desktop computers, the Chromebook, which runs the Linux kernel-based Chrome OS, dominates the US K–12 education market and represents nearly 20 percent of sub-$300 notebook sales in the US. Linux is the leading operating system on servers (over 96.4% of the top 1 million web servers' operating systems are Linux),leads other big iron systems such as mainframe computers, and is the only OS used on TOP500 supercomputers (since November 2017, having gradually eliminated all competitors).\nLinux also runs on embedded systems, i.e. devices whose operating system is typically built into the firmware and is highly tailored to the system. This includes routers, automation controls, smart home technology (like Google Nest), televisions (Samsung and LG Smart TVs use Tizen and WebOS, respectively), automobiles (for example, Tesla, Audi, Mercedes-Benz, Hyundai, and Toyota all rely on Linux), digital video recorders, video game consoles, and smartwatches. The Falcon 9\u0026rsquo;s and the Dragon 2\u0026rsquo;s avionics use a customized version of Linux.\nLinux is one of the most prominent examples of free and open-source software collaboration. The source code may be used, modified and distributed commercially or non-commercially by anyone under the terms of its respective licenses, such as the GNU General Public License.\n90% of all cloud infrastructure is powered by Linux including supercomputers and cloud providers. 74% of smartphones in the world are Linux-based.\n "
+},
+{
+	"uri": "/further_reading/cli.html",
+	"title": "AWS CLI",
+	"tags": [],
+	"description": "",
+	"content": "You can accomplish all of the tasks in this workshop using the CLI, or Command Line Interface. As an aspiring CloudOps admin, it would be a good idea to be familiar with the CLI.\nInstall and configure the CLI here.\nSee if you can perform these tasks with the CLI:\n Launch an EC2 instance Configure the security group Create an EBS volume Attach the volume to an EC2 instance Delete the EBS volume Terminate the EC2 instance  "
+},
+{
+	"uri": "/further_reading/automating.html",
+	"title": "Automation",
+	"tags": [],
+	"description": "",
+	"content": "All of the tasks we completed to launch an EC2 instance and install Apache httpd can be automated with a tool called Cloudformation. What would we have to do?\n Launch an EC2 instance Install the Apache web server (use userdata) Add some content Configure the security group Add and configure storage Move the web content Configure Apache httpd to point to the new web location  Download and launch this template in the AWS Cloudformation Console to peform all of the steps in exercises 1-5. The stack takes about 2 minutes to create. Simply delete the stack to perform exercise 6 (Cleaning Up). Note that you must have an existing private key in EC2 before you launch this template.\n"
+},
+{
+	"uri": "/6.cleaning_up/deleting_volume.html",
+	"title": "Clean up your volume",
+	"tags": [],
+	"description": "",
+	"content": "We\u0026rsquo;ll start by detaching the EBS volume from the EC2 instance.\nFirst, stop the web server with the following command:\nsudo systemctl stop httpd Then, unmount the volume from your EC2 instance:\nsudo umount -d /dev/xvdf Then, detach the volume from the instance as explained in \u0026ldquo;Step 2: Detach the volume from the instance\u0026rdquo; of these these instructions.\nOnce the volume is detached from the EC2 Instance, follow these instructions to delete the volume.\n"
+},
+{
+	"uri": "/1.launching_an_ec2_instance/global_infra.html",
+	"title": "Global Infrastructure",
+	"tags": [],
+	"description": "",
+	"content": "It is helpful to have some background on the AWS Global Infrastructure before we launch a Linux instance in AWS.\nAWS currently has 24 regions in its global infrastructure. Each of these regions contains at least two Availability Zones. You can think of an Availability Zone as a collection of one or more physical datacenters. There are 77 Availability Zones throughout the world.\nWe\u0026rsquo;ll be using the us-east-1 region in this session.\n"
+},
+{
+	"uri": "/introduction.html",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": " Add yourself to the class roster and update your progress as you go through the workshop! Also add yourself to the #linux Slack channel: Join here\n Welcome to the Amazon CloudOps Linux Workshop!\nThis workshop is designed to provide basic training for aspiring cloud operations engineers.\nAs a pre-requisite, you should have:\n Completed the Linux Survival walkthrough Setup your laptop environment Established an AWS Account  This chapter will give you a foundational introduction on Linux and EC2. By the end of this tutorial, you will have accomplished the following:\n Basic knowledge of EC2 - how to launch, terminate, login to an instance Installed software on a Linux instance in AWS Configured a network to allow access to an instance Added storage to an instance Understood the AWS global infrastructure at a high level - regions and availabililty zones  Please move on to the next section to begin.\n Prerequisites   Why Linux? Who uses it?   "
+},
+{
+	"uri": "/4.adding_storage/intro_ebs.html",
+	"title": "Introduction to EBS",
+	"tags": [],
+	"description": "",
+	"content": "Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices. You can mount these volumes as devices on your instances.\nEBS volumes that are attached to an instance are exposed as storage volumes that persist independently from the life of the instance.\nYou can create a file system on top of these volumes, or use them in any way you would use a block device (such as a hard drive). You can dynamically change the configuration of a volume attached to an instance.\n"
+},
+{
+	"uri": "/2.logging_in/macos.html",
+	"title": "macOS",
+	"tags": [],
+	"description": "",
+	"content": "macOS Terminal Open a Terminal session and execute the following command, substituting the values for your_private_key.pem and your_host_public_ip with the ones from Step 1. As for the private key, you should have been given an option to download this file when you launched the instance.\nThis command will establish an SSH connection to your server, logging in with the user ec2-user, which is the default on Amazon Linux 2.\nssh -i \u0026lt;your_private_key.pem\u0026gt; ec2-user@\u0026lt;your_host_public_ip\u0026gt;  If you are unable to establish a connection, you may need to change the permissions of your private key file. You may see an error such as \u0026ldquo;WARNING: UNPROTECTED PRIVATE KEY FILE.\u0026rdquo; In this case, just change the permissions of your private key to 400 (user read only) with the command:\nchmod 400 \u0026lt;your_private_key_file.pem\u0026gt;  Try to establish a connection with the user root. You\u0026rsquo;ll see that access is denied. The root user is typically not allowed to login via SSH. This is a common security configuration that protects the system from compromise.\n "
+},
+{
+	"uri": "/5.moving_the_web_root/moving_the_web_root.html",
+	"title": "Moving the web root",
+	"tags": [],
+	"description": "",
+	"content": "By default, the Apache web server stores its documents in the /var/www/html document root directory, which is located on the root filesystem. In this section, we will learn how to move this directory to the new mounted filesystem we configured previously.\nConnect to the EC2 instance that you created earlier as you did in the Logging in section.\nFirst, change your directory to the root directory:\ncd / We want to move the document root directory\u0026rsquo;s content from /var/www/html to the new mount point directory /data.\nCopy the document root directory\u0026rsquo;s content to the new location using rsync:\nsudo rsync -av /var/www/html /data Next, we need to modify Apache server\u0026rsquo;s configuration file and make it use the new directory.\nOpen and edit the configuration file:\nIt is a good practice to create a backup of the known good configuration file before making edits. Some critical files (such as /etc/fstab) can prevent the system from booting properly if there are typos or incorrect configuration.\n sudo nano /etc/httpd/conf/httpd.conf In the document, find this section:\n# # DocumentRoot: The directory out of which you will serve your # documents. By default, all requests are taken from this directory, but # symbolic links and aliases may be used to point to other locations. # DocumentRoot \u0026quot;/var/www/html\u0026quot; # # Relax access to content within /var/www. # \u0026lt;Directory \u0026quot;/var/www\u0026quot;\u0026gt; AllowOverride None # Allow open access: Require all granted \u0026lt;/Directory\u0026gt; # Further relax access to the default document root: \u0026lt;Directory \u0026quot;/var/www/html\u0026quot;\u0026gt; # # Possible values for the Options directive are \u0026quot;None\u0026quot;, \u0026quot;All\u0026quot;, # or any combination of: Modify DocumentRoot and Directory \u0026ldquo;/var/www/html\u0026rdquo; to use the new location:\n# # DocumentRoot: The directory out of which you will serve your # documents. By default, all requests are taken from this directory, but # symbolic links and aliases may be used to point to other locations. # DocumentRoot \u0026quot;/data/html\u0026quot; # # Relax access to content within /var/www. # \u0026lt;Directory \u0026quot;/var/www\u0026quot;\u0026gt; AllowOverride None # Allow open access: Require all granted \u0026lt;/Directory\u0026gt; # Further relax access to the default document root: \u0026lt;Directory \u0026quot;/data/html\u0026quot;\u0026gt; # # Possible values for the Options directive are \u0026quot;None\u0026quot;, \u0026quot;All\u0026quot;, # or any combination of: Save the file. Now, let\u0026rsquo;s test that the Apache server is actually configured to use the new location for its document root directory.\nRemove the index.html file you created before:\nsudo rm /var/www/html/index.html Refresh your web browser. Your web site will not show your custom index.html homepage. We need to restart the Apache server in order to use apply the new configuration.\nRestart the Apache server:\nsudo systemctl restart httpd Refresh again your browser. Your web site will be up and running. The Apache server uses the new location for its document root directory.\nCongratulations! You\u0026rsquo;ve finished the Linux Workshop! Make sure to update the class roster to show your progress.\nThe next step is to clean up your account \u0026ndash; rmeove the instance and the EBS volume to avoid any charges.\n"
+},
+{
+	"uri": "/3.installing_a_webserver/install_httpd.html",
+	"title": "Install Apache httpd",
+	"tags": [],
+	"description": "",
+	"content": "In this section, we\u0026rsquo;ll use the yum package manager to install a popular open-source web server, Apache httpd. Start connecting to the EC2 instance that you created earlier\nGet the latest bug fixes and security updates by updating the software on your EC2 instance. To do this, use the following command: sudo is Superuser Do - this command allows normal users to run commands as root (the superuser). Installing software is one common task for the superuser (usually). Learn more about sudo here.\n sudo yum update After the updates complete, install the httpd software using the yum install command:\nsudo yum install -y httpd Start the web server with this command:\nsudo systemctl start httpd Configure the web server to start with each system boot using the chkconfig command:\nsudo systemctl enable httpd From your Linux instance, you should be able to browse to your web server. You can use a text-based browser called lynx to browse to sites on the command line.\nInstall it with this command:\nsudo yum install -y lynx Now issue this command to browse to your web server:\nlynx http://localhost You will initially see an error in the browser that reads HTTP 301 - Forbidden. This is the default response for new installations of Apache httpd. Don\u0026rsquo;t worry - this is expected and will show the Apache test page after a few seconds. When you add some web content in the next section, this error will not be shown.\n Once you see this screen, you have successfully installed Apache httpd and been able to browse to it from your Linux instance. Done!\n(Type q to exit Lynx)\n"
+},
+{
+	"uri": "/3.installing_a_webserver/add_content.html",
+	"title": "Add Content",
+	"tags": [],
+	"description": "",
+	"content": "By default, Apache httpd stores web content in the /var/www directory. To allow the ec2-user user to manage files in the default root directory for your Apache web server, modify the ownership and permissions of the /var/www directory. In this tutorial, you add a group named www to your EC2 instance and add the ec2-user user as a member of that group. Then you give that group ownership of the /var/www directory and add write permissions for the group. Any members of that group can then add, delete, and modify files for the web server.\nTo set file permissions for the Apache web server, add the www group to your EC2 instance with the following command.\nsudo groupadd www Add the ec2-user user to the www group:\nsudo usermod -a -G www ec2-user Log out by issuing the exit command to refresh your permissions and include the new www group.\nLog back in again and verify that the www group exists with the groups command. Your output looks similar to the following:\nChange the group ownership of the /var/www directory and its contents to the www group.\nsudo chgrp -R www /var/www Change the directory permissions of /var/www and its subdirectories to add group write permissions and set the group ID on subdirectories created in the future.\nsudo chmod 2775 /var/www find /var/www -type d -exec sudo chmod 2775 {} + Recursively change the permissions for files in the /var/www directory and its subdirectories to add group write permissions.\nfind /var/www -type f -exec sudo chmod 0664 {} + Right now you are in the /home directory. You can verify this by using the \u0026ldquo;pwd\u0026rdquo; command. Change your directory to /var/www/html:\ncd /var/www/html Add some sample content to be served by your web server. Add a file called index.html using this command:\nnano index.html You can add any html file you want. For example, you can use this simple html file:\n\u0026lt;!DOCTYPE html\u0026gt; \u0026lt;html\u0026gt; \u0026lt;head\u0026gt; \u0026lt;title\u0026gt;Hello World!\u0026lt;/title\u0026gt; \u0026lt;/head\u0026gt; \u0026lt;body\u0026gt; \u0026lt;p\u0026gt;Hello World!\u0026lt;/p\u0026gt; \u0026lt;/body\u0026gt; \u0026lt;/html\u0026gt; Save your file and use lynx to browse to the page with lynx http://localhost. You should see something like this:\nIn the next section, we\u0026rsquo;ll configure the network so that you can access your web server from the internet.\n"
+},
+{
+	"uri": "/6.cleaning_up/deleting_instance.html",
+	"title": "Clean up your instance",
+	"tags": [],
+	"description": "",
+	"content": "Now, let\u0026rsquo;s terminate the EC2 instance by following these instructions.\nCheck that both the EBS volume and the EC2 instance are terminated.\n"
+},
+{
+	"uri": "/4.adding_storage/create_volume.html",
+	"title": "Create an Amazon EBS volume",
+	"tags": [],
+	"description": "",
+	"content": "In this tutorial, you’ll create an Amazon Elastic Block Store (Amazon EBS) volume.\nFollow \u0026ldquo;Create an empty volume\u0026rdquo; using these instructions. Use the following parameters:\nYou can find the availability zone for your instance on the EC2 details page under the Security tab.\n    Parameter Value     Region us-east-1   Volume Type General Purpose SSD (gp2)   Size (GiB) 10   Availability Zone (same as the EC2 instance)   Snapshot ID (default empty value)   Encryption (default encryption not marked)   Tags Key=Name, Value=your last name    "
+},
+{
+	"uri": "/1.launching_an_ec2_instance/launch.html",
+	"title": "Launch the Instance",
+	"tags": [],
+	"description": "",
+	"content": "In this tutorial, you\u0026rsquo;ll launch an EC2 (Elastic Compute Cloud) instance into a region of AWS.\nFollow Step 1: Launch an instance using these instructions. Use the following parameters:\n   Parameter Value     Region us-east-1   Amazon Machine Image Amazon Linux 2 AMI, SSD Volume Type, 64-bit (x86)   Instance type t2.micro (free tier eligible)   Instance Details (accept all defaults)   Storage (accept default 8GB SSD volume)   Tags Key=Name, Value=your last name   Security Group SSH, Source=My IP   Key Pair Create a new key pair and name it: your_last_name-us-east-1.pem (download to desktop)    At this point, you are well on your way to becoming an AWS Cloud Operations Administrator! Once you have launched the instance and it\u0026rsquo;s Status Check shows 2 of 2 checks passed, post your status to this form. Continue to the next step.\nPlease update the class roster when you finish with Exercise 1.\n "
+},
+{
+	"uri": "/1.launching_an_ec2_instance.html",
+	"title": "Launching an EC2 Instance",
+	"tags": [],
+	"description": "",
+	"content": "Exercise 1 Launching an EC2 Instance In this tutorial, you\u0026rsquo;ll launch an EC2 (Elastic Compute Cloud) instance into a region of AWS. For this tutorial, we\u0026rsquo;ll use the region named us-east-1: this region is located in Northern Virginia, and was the first AWS region to be constructed.\nFirst, familiarize yourself with the AWS Global Infrastructure. This topic will be explained in greater detail later on in the course, but the basics are described on the next page.\n"
+},
+{
+	"uri": "/further_reading/storage_management.html",
+	"title": "Storage Management in Linux",
+	"tags": [],
+	"description": "",
+	"content": "Check out the Linux Storage Management Hands-on Lab for a detailed walkthrough of managing partitions on a Linux machine.\n"
+},
+{
+	"uri": "/2.logging_in/windows.html",
+	"title": "Windows",
+	"tags": [],
+	"description": "",
+	"content": "Windows PuTTY To log into the EC2 instance from a Windows OS, follow sections \u0026ldquo;Convert your private key using PuTTYgen\u0026rdquo; and \u0026ldquo;Connect to your Linux instance\u0026rdquo; from these instructions.\nUse ec2-user for my-instance-user-name in the instructions.\n"
+},
+{
+	"uri": "/4.adding_storage/attach_volume.html",
+	"title": "Attach volume to the instance",
+	"tags": [],
+	"description": "",
+	"content": "In this tutorial, you’ll attach the Amazon Elastic Block Store (Amazon EBS) volume created in the previous step to your existent EC2 instance.\nFollow these instructions. Use the following parameters:\n   Parameter Value     Region us-east-1   Volume (volume from previous step)   Instance (existing EC2 instance)   Device (leave default)    "
+},
+{
+	"uri": "/3.installing_a_webserver/config_network.html",
+	"title": "Configure the Network",
+	"tags": [],
+	"description": "",
+	"content": "We\u0026rsquo;ll have to open port 80 on the web server so that you can access it from the internet. We do this by configuring a security group rule on the AWS console.\n Click on your instance in the EC2 console. Then, select the Security tab in the window below. Click to open the Security Group. It should be named something like sg-0fed659811d69a592 (launch-wizard-81). In the Security Group console, click Edit Inbound Rules Click Add Rule Add a rule for Port Range = 80 and Source = My IP Click Save Rules  You can now test that your web server is properly installed and started. To do this, enter the public Domain Name System (DNS) name of your EC2 instance in the address bar of a web browser, for example: http://ec2-12-3-456-78.us-east-1.compute.amazonaws.com. If your web server is running, then you will see the content that you posted in step 2 - Add Content.\nPlease update the class roster when you finish with Exercise 3.\n "
+},
+{
+	"uri": "/2.logging_in.html",
+	"title": "Logging In",
+	"tags": [],
+	"description": "",
+	"content": "Exercise 2 Logging in Now that you\u0026rsquo;ve deployed your EC2 instance, you can log in to it like any other Linux host. The procedure varies based on the client OS you are using (Windows or macOS/Linux). Establish a connection and have a look around in your new instance.\n"
+},
+{
+	"uri": "/further_reading/user_management.html",
+	"title": "User Management in Linux",
+	"tags": [],
+	"description": "",
+	"content": "Check out the Managing Users in Linux Hands-on Lab for a detailed walkthrough of managing users on a Linux machine.\n"
+},
+{
+	"uri": "/6.cleaning_up/verify_billing.html",
+	"title": "Verify Billing Information",
+	"tags": [],
+	"description": "",
+	"content": "You should also verify billing information in the billing console to ensure that you are not liable for any charges.\nFollow these instructions to activate your user for the billing console.\nClick the username link at the top of the AWS Console and then click My Billing Dashboard\nYou should see your current month-to-date balance as some amount less than $1, and your forecasted spend less than $10.\n"
+},
+{
+	"uri": "/4.adding_storage/mouting_volume.html",
+	"title": "Formatting and mounting",
+	"tags": [],
+	"description": "",
+	"content": "The EBS volume is attached to the EC2 instance. However, you need to make the volume available to use by formatting and mounting it. There are three steps here:\n Format the volume with mkfs Create a mount point Mount the volume  graph LR; A[Format the volume] --|Verify with lsblk -fs| B[Create the mount point] B --|Verify with ls -lah /| C[Mount the volume] C --|Verify with mount| E[Done]  First, connect to the EC2 instance that you created earlier as you did in the Logging in section.\nCheck the available disk devices with the lsblk command to ensure that you have attached the volume to your instance.\nIt will return something similar to:\nNAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT xvda 202:0 0 8G 0 disk └─xvda1 202:1 0 8G 0 part / xvdf 202:80 0 10G 0 disk The root device is /dev/xvda. The EBS volume that we just created and attached /dev/xvdf.\nThe attached volume is empty and you must create a file system on it before you can mount and use it. Issue the following command:\nsudo mkfs -t xfs /dev/xvdf    Verification steps   You can also use the lsblk command to list the filesystems on a disk. Issue the following command: lsblk -fs. You should see some output similar to the screenshot below. If xvdf is listed with the xfs filesystem, then you have correctly formatted the volume.   The next step is to create a mount point directory for the volume. This mount point is where we will read and write files to the volume:\nsudo mkdir /data    Verification steps   List the directory to make sure you created it in the right place. Issue the following command to list the directory: ls -lah /. You will see a listing of the root directory or filesystem. FYI, \u0026ldquo;/\u0026rdquo; is known as the root filesystem, not to be confused with the root user. Make sure that the data directory exists here, indicated in the screenshot above by the entry circled in red. This entry indicates that the data is a directory owned by the root user (and root group) that was created on 19 Feb at 11:52 UTC. The string _drwxr-xr-x indicates that the directory is read-write-execute for the owner, read-execute for the group (root) and read-execute for everyone else. These permissions can be encoded as 755 where the first number (7) corresponds to the owner\u0026rsquo;s permissions, the second (5) corresponds to the group permissions, and the third (5) corresponds to permissions for everyone else. Read permissions are represeted by the number 4, write permissions by the number 2, and execute permissions by the number 1. So, permissions of 7 are equal to read-write-execute (4+2+1). For directories, execute means that a user can enter the directory and list contents.   Finally, we mount the volume at the directory:\nsudo mount /dev/xvdf /data    Verification steps   To verify that the volume is mounted, you can use the mount command without any arguments. The last line in this sample output shows that the device named xvdf is mounted on the data directory.\n[ec2-user@ip-123-45-67-89 ~]$ mount sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime) proc on /proc type proc (rw,nosuid,nodev,noexec,relatime) devtmpfs on /dev type devtmpfs (rw,nosuid,size=492684k,nr_inodes=123171,mode=755) securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime) tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev) devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000) tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755) tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755) cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd) pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime) cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio) cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct) cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids) cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory) cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset) cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer) cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb) cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio) cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event) cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices) /dev/xvda1 on / type xfs (rw,noatime,attr2,inode64,noquota) debugfs on /sys/kernel/debug type debugfs (rw,relatime) systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=31,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=12416) mqueue on /dev/mqueue type mqueue (rw,relatime) hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,pagesize=2M) sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime) tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=100692k,mode=700,uid=1000,gid=1000) /dev/xvdf on /data type xfs (rw,relatime,attr2,inode64,noquota) [ec2-user@ip-172-31-60-29 ~]$ You could also use the df command to list the currently mounted filesystems (df is the disk free command, and the -h option is for human readable):\n[ec2-user@ip-172-31-60-29 ~]$ df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 482M 0 482M 0% /dev tmpfs 492M 0 492M 0% /dev/shm tmpfs 492M 420K 492M 1% /run tmpfs 492M 0 492M 0% /sys/fs/cgroup /dev/xvda1 8.0G 1.5G 6.6G 18% / tmpfs 99M 0 99M 0% /run/user/1000 /dev/xvdf 10G 43M 10G 1% /data    At this point, we have created a new EBS volume, formatted it, and mounted it in the Linux instance. There is one more step to complete to configure the system to mount the new volume at boot time. Proceed to the next section to configure the filesystem table.\n"
+},
+{
+	"uri": "/3.installing_a_webserver.html",
+	"title": "Installing a Web Server",
+	"tags": [],
+	"description": "",
+	"content": "Exercise 3 Installing a Web Server What will we be doing in this section?\nWe will learn by doing and will install an Apache web server using the yum package manager.\nWe\u0026rsquo;ll install the Apache Web Server (also referred to as httpd - the HTTP Daemon). This is a very common (open source) piece of software that you\u0026rsquo;ll encounter in almost any company that has internet facing applications. Other common web servers include:\n nginx (pronounced \u0026lsquo;engine ex\u0026rsquo;) Internet Information Services (IIS) - Microsoft   According to Wikipedia, around 90% of web sites are served from Apache and nginx as of February 2019. Microsoft IIS and others represent the remaining 10%. You can use a tool from Netcraft to determine what software a site is running. Try it here and inspect www.amazon.com\n"
+},
+{
+	"uri": "/further_reading/text_editor.html",
+	"title": "Using a Text Editor in Linux",
+	"tags": [],
+	"description": "",
+	"content": "Check out the command-line text editors in Linux for a couple of options to edit files on a Linux machine.\nOr try to learn VIM for the last time!\n"
+},
+{
+	"uri": "/further_reading/dev_ops.html",
+	"title": "Creating a DevOps pipeline",
+	"tags": [],
+	"description": "",
+	"content": "Check out the ACloudGuru DevOps Pipeline lab to learn how to create a DevOps pipeline.\n"
+},
+{
+	"uri": "/4.adding_storage/mounting_on_reboot.html",
+	"title": "Mounting on reboot",
+	"tags": [],
+	"description": "",
+	"content": "The mount point we did in the previous section is not preserved after rebooting the EC2 instance. In order to do so, we need to add an entry for the device to the /etc/fstab file. This file contains all the disks and partitions, and describes how they should be initialized into the filesystem.\nFirst, we\u0026rsquo;ll create a backup of the /etc/fstab file.\nIt is a good practice to create a backup of the known good configuration file before making edits. Some critical files (such as /etc/fstab) can prevent the system from booting properly if there are typos or incorrect configuration.\n sudo cp /etc/fstab /etc/fstab.orig Next, find the device\u0026rsquo;s 128-bit universally unique identifier (UUID). This UUID, unlike the devices' names, is unique and does not change:\nsudo blkid This command will return the UUID of your devices. Save the UUID of /dev/xvdf. We will use it later:\n/dev/xvda1: LABEL=\u0026quot;/\u0026quot; UUID=\u0026quot;ca774df7-756d-4261-a3f1-76038323e572\u0026quot; TYPE=\u0026quot;xfs\u0026quot; PARTLABEL=\u0026quot;Linux\u0026quot; PARTUUID=\u0026quot;02dcd367-e87c-4f2e-9a72-a3cf8f299c10\u0026quot; /dev/xvdf: UUID=\u0026quot;aebf131c-6957-451e-8d34-ec978d9581ae\u0026quot; TYPE=\u0026quot;xfs\u0026quot; Now that we know the UUID, let\u0026rsquo;s add it to the /etc/fstab file. Open the file:\nsudo nano /etc/fstab Add the following line to the file, using the UUID you saved previously:\nUUID=aebf131c-6957-451e-8d34-ec978d9581ae /data xfs defaults,nofail 0 2 Save the file.\nNow, the /etc/fstab/ has two entries. Check that the entry has been added correctly. We\u0026rsquo;ll unmount the device and then mount all file systems in /etc/fstab.\nsudo umount /data sudo mount -a If there are no errors, the configuration is properly done!\n"
+},
+{
+	"uri": "/4.adding_storage.html",
+	"title": "Adding storage",
+	"tags": [],
+	"description": "",
+	"content": "Exercise 4 Adding Storage In this tutorial, you’ll add some storage to your web server. In AWS, you do this by attaching an Amazon Elastic Block Store (Amazon EBS) volume to the EC2 instance you\u0026rsquo;ve created previously.\n"
+},
+{
+	"uri": "/further_reading/github_basics.html",
+	"title": "Git basics",
+	"tags": [],
+	"description": "",
+	"content": "Check out this article on Git basics.\n"
+},
+{
+	"uri": "/5.moving_the_web_root.html",
+	"title": "Moving the web root",
+	"tags": [],
+	"description": "",
+	"content": "Exercise 5 Moving the Web Root In this section, you’ll learn how to move the web root of your Apache server to the new volume.\n"
+},
+{
+	"uri": "/6.cleaning_up.html",
+	"title": "Cleaning Up",
+	"tags": [],
+	"description": "",
+	"content": " We would very much appreciate it if you would take our survey so that we can improve the content for next time! Responses are anonymous.\n The web server you created in this workshops is in the free tier.\nHowever you should take care to shutdown the instance and remove the storage volume so that you do not incur any costs.\nOn a related note, check out the pricing of EC2 instances and EBS volumes. You\u0026rsquo;ll see that the pricing of instances varies widely. Our t2.micro instance in us-east-1 costs $0.0116/hr \u0026ndash; that is, a little over a penny. Reading further, you\u0026rsquo;ll notice that these so-called on-demand instances are actually charged per second. Elastic Block Store (EBS) storage is charged a bit differently than EC2. Our EBS volume costs $0.08/GB-month. Notice that there are different choices for EBS volumes. These options will be discussed in an upcoming storage session.\n"
+},
+{
+	"uri": "/further_reading.html",
+	"title": "Further Reading",
+	"tags": [],
+	"description": "",
+	"content": "Continue your discovery of AWS EC2 and Linux! Improvements  Make improvements to these pages! Click on \u0026ldquo;Edit this page\u0026rdquo; in the upper right corner of a page to propose improvements, even minor edits like correcting typographical errors. These will greatly help the next cohort of students to navigate the material.  Ideas to learn more about Linux and EC2 We\u0026rsquo;ve collected links to resources to help you round out your understanding of running Linux on AWS.\n  Try the AWS CloudShell - a barebones Linux instance that you can access from the AWS console. Can you use it to login to the EC2 instance you created in this session?\n  Install the AWS Command Line Interface (CLI) and try to run through the steps in this workshop using only the command line.\n  One of the first things to try would be to automate steps 1-6 using an AWS tool called Cloudformation.\n  Dive deep on Storage Management in Linux to prepare for the upcoming session on Storage in AWS.\n  Dive deep on User Management in Linux\n  Looking for more of a challenge? Dig in to Continuous Integration and Continuous Deployment (CI/CD) and Git using the links below. Many companies on the cutting edge are adopting CI/CD as a means to develop quality software.\n  Check out some of the HOWTOs on the Linux Documentation Project, particularly this one, a great explanation of the boot sequence of a Linux machine.\n  "
+},
+{
+	"uri": "/categories.html",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags.html",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
