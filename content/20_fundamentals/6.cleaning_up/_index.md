@@ -1,5 +1,5 @@
 ---
-title: "Cleaning Up"
+title: "AWS Security Center"
 chapter: false
 weight: 100
 pre: "<b>6. </b>"

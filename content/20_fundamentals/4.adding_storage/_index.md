@@ -1,5 +1,5 @@
 ---
-title: "Adding storage"
+title: "Configuration Management"
 chapter: true
 weight: 60
 pre: "<b>4. </b>"
