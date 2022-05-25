@@ -1,5 +1,5 @@
 ---
-title: "Further Reading"
+title: "AWS Security Center"
 weight: 1000
 ---
 

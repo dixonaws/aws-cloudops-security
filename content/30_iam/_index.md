@@ -1,5 +1,5 @@
 ---
-title: "Identity and Access Management"
+title: "IAM"
 chapter: true
 weight: 20
 pre: ""

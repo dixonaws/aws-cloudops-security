@@ -22,8 +22,6 @@ We'll have instructor-led sessions to make sure everyone can to get through the 
 <br>
 Your Tourguides:
 
-| ![John Dixon](/images/dixonaws.png?height=250px&classes=shadow,border)                    | ![Claudiu Bota](/images/claubota.png?height=250px&classes=shadow,border)              | ![Tux](/images/TuxBadge.png?height=175px&classes=shadow,border) |
+| ![John Dixon](/images/dixonaws.png?height=250px&classes=shadow,border)                    | ![Claudiu Bota](/images/rimzaaf.png?height=250px&classes=shadow,border)              | ![Tux](/images/TuxBadge.png?height=175px&classes=shadow,border) |
 |-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------|
-| <center>John Dixon<br>Solutions Architect, AWS<br>München, Germany<br>Instructor</center> | <center>Claudiu Bota<br>Solutions Architect, AWS<br>Madrid, Spain<br>Content</center> | <center>Tux<br>Linux Mascot<br>Unknown<br>Content</center>      |
-| ![John Dixon](/images/elerna.png?height=250px&classes=shadow,border)                      | ![Utsav Joshi](/images/ujoshi.png?height=250px&classes=shadow,border)                 | &nbsp;                                                          |
-| <center>Lerna Ekmekcioglu<br>Solutions Architect, AWS<br>New York, New York</center>      | <center>Utsav Joshi<br>Technical Account Manager, AWS<br>New York, New York</center>  | &nbsp;                                                          |
+| <center>John Dixon<br>Solutions Architect, AWS<br>München, Germany<br>Instructor</center> | <center>Rim Zaafouri<br>Solutions Architect, AWS<br>Paris, France<br>Content Creator</center> | <center>Tux<br>Linux Mascot<br>Unknown<br>Content</center>      | &nbsp;                                                          |

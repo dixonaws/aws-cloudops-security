@@ -1,5 +1,5 @@
 ---
-title: "Further Reading"
+title: "Security Best Practices"
 weight: 1000
 ---
 

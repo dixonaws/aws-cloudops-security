@@ -1,5 +1,5 @@
 ---
-title: "Further Reading"
+title: "Configuration Management"
 weight: 1000
 ---
 

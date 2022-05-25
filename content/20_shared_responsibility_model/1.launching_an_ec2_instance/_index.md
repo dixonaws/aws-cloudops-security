@@ -14,7 +14,3 @@ the first AWS region to be constructed.
 
 First, familiarize yourself with the AWS Global Infrastructure. This topic will be explained in greater detail
 later on in the course, but the basics are described on the next page.
-
-{{% notice info%}}
-What are your perceptions on cloud security?
-{{% /notice%}}
