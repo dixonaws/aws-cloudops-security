@@ -1,5 +1,5 @@
 ---
-title: "Shared Responsibility Model"
+title: "Shared Responsibility Model REAL"
 chapter: true
 weight: 20
 pre: ""

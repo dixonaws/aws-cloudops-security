@@ -1,5 +1,5 @@
 ---
-title: "Prerequisites"
+title: "Pre-requisites"
 draft: false
 weight: 11
 ---

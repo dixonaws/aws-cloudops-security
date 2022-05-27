@@ -8,7 +8,7 @@ weight: 10
 Add yourself to the [class roster](https://docs.google.com/spreadsheets/d/1xxHMJ_m2R-VvTCkJWQvTv6I2geRETGq9m9ezoIEyBxw/edit?usp=sharing) and update your progress as you go through the workshop! 
 {{% /notice%}}
 
-Welcome to the Amazon CloudOps Linux Workshop!
+Welcome to the Amazon CloudOps Security & Compliance Workshop!
 
 This workshop is designed to provide basic training for aspiring cloud operations engineers.
 
@@ -18,7 +18,7 @@ As a pre-requisite, you should have:
 2. Setup your laptop environment
 3. Established an AWS Account
 
-This chapter will give you a foundational introduction on Linux and EC2. By the end of this tutorial, you will have accomplished the following:
+This chapter will give you a foundational introduction on security and compliance at AWS. By the end of this tutorial, you will have accomplished the following:
 
 1. Basic knowledge of EC2 - how to launch, terminate, login to an instance
 2. Installed software on a Linux instance in AWS
