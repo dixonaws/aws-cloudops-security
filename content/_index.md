@@ -22,6 +22,6 @@ We'll have instructor-led sessions to make sure everyone can to get through the 
 <br>
 Your Tourguides:
 
-| ![John Dixon](/images/dixonaws.png?height=250px&classes=shadow,border)                    | ![Rim Zaafouri](/images/rimzaaf.png?height=250px&classes=shadow,border)              | ![Tux](/images/TuxBadge.png?height=175px&classes=shadow,border) |
+| ![John Dixon](/images/dixonaws.png?height=250px&classes=shadow,border)                    | ![Rim Zaafouri](/images/rimzaaf.png?height=250px&classes=shadow,border)            | 
 |-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------|
 | <center>John Dixon<br>Solutions Architect, AWS<br>München, Germany<br>Instructor</center> | <center>Rim Zaafouri<br>Solutions Architect, AWS<br>Paris, France<br>Content Creator</center> | &nbsp;                                                          |

@@ -4,9 +4,6 @@ chapter: false
 weight: 10
 ---
 
-{{% notice info%}}
-Add yourself to the [class roster](https://docs.google.com/spreadsheets/d/1xxHMJ_m2R-VvTCkJWQvTv6I2geRETGq9m9ezoIEyBxw/edit?usp=sharing) and update your progress as you go through the workshop! 
-{{% /notice%}}
 
 Welcome to the Amazon CloudOps Security & Compliance Workshop!
 
@@ -14,17 +11,17 @@ This workshop is designed to provide basic training for aspiring cloud operation
 
 As a pre-requisite, you should have:
 
-1. Completed the [Linux Survival walkthrough](https://linuxsurvival.com/linux-tutorial-introduction/)
-2. Setup your laptop environment
-3. Established an AWS Account
+1. Setup your laptop environment
+2. Established an AWS Account
 
-This chapter will give you a foundational introduction on security and compliance at AWS. By the end of this tutorial, you will have accomplished the following:
+This course will give you a foundational introduction on security and compliance at AWS. By the end of this workshop, you will be able to describe:
 
-1. Basic knowledge of EC2 - how to launch, terminate, login to an instance
-2. Installed software on a Linux instance in AWS
-3. Configured a network to allow access to an instance   
-4. Added storage to an instance
-5. Understood the AWS global infrastructure at a high level - regions and availabililty zones
+1. The importance of security when using the AWS cloud.
+2. The AWS shared responsibility model.
+3. The access control and access management features of AWS services.
+4. AWS security and encryption methods.
+5. AWS configuration management.
+6. AWS security best practices.
 
 
 Please move on to the next section to begin.

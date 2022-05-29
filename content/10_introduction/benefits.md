@@ -1,5 +1,5 @@
 ---
-title: "AWS Security: Benefits"
+title: "2 - AWS Security: Benefits"
 draft: false
 weight: 11
 ---
