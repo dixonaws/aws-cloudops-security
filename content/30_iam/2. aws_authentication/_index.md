@@ -1,7 +1,7 @@
 ---
-title: "2 - AWS Identity Authentication"
+title: "AWS Identity Authentication"
 chapter: false
-weight: 22
+weight: 21
 pre: 
 ---
 

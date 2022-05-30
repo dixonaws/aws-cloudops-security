@@ -1,7 +1,7 @@
 ---
-title: "2 - Environmental Security"
+title: "Environmental Security"
 chapter: false
-weight: 22
+weight: 13
 pre: 
 ---
 

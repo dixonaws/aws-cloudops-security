@@ -1,7 +1,7 @@
 ---
 title: "Answers"
 chapter: true
-weight: 21
+weight: 31
 ---
 
 ### Knowledge Check

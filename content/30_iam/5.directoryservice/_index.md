@@ -1,7 +1,7 @@
 ---
-title: "5 - AWS Directory Service"
+title: "AWS Directory Service"
 chapter: false
-weight: 22
+weight: 24
 pre: 
 ---
 

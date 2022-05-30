@@ -1,7 +1,7 @@
 ---
 title: "Customer Responsibilities"
 draft: false
-weight: 11
+weight: 20
 ---
  
 

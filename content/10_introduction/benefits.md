@@ -1,7 +1,7 @@
 ---
-title: "2 - AWS Security: Benefits"
+title: "AWS Security: Benefits"
 draft: false
-weight: 11
+weight: 12
 ---
 
 The security of AWS infrastructure and products is designed to meet the needs of the largest and most demanding customers. However, security features that are usually too expensive or impractical for smaller customers, can be provided effectively by AWS to all customers regardless of the size of their organization. 

@@ -1,7 +1,7 @@
 ---
 title: "Knowledge Check"
 chapter: true
-weight: 21
+weight: 30
 ---
 
 ### Knowledge Check

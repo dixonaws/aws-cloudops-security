@@ -1,7 +1,7 @@
 ---
-title: "1 - Physical Security"
+title: "Physical Security"
 chapter: false
-weight: 22
+weight: 12
 pre: 
 ---
 

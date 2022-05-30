@@ -1,7 +1,7 @@
 ---
-title: "3 - Accreditations & Certifications"
+title: "Accreditations & Certifications"
 draft: false
-weight: 12
+weight: 13
 ---
 
 AWS certifications, accreditation, and reports can be used to validate the security controls in the AWS environment. These reports and certifications are produced by independent third-party auditors and attest to the design and operational effectiveness of AWS security controls. 

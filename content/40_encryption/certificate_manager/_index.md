@@ -1,7 +1,7 @@
 ---
-title: "1 - Certificate Manager"
+title: "Certificate Manager"
 chapter: false
-weight: 22
+weight: 23
 pre: 
 ---
 

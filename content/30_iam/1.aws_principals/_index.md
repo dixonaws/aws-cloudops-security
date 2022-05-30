@@ -1,7 +1,7 @@
 ---
-title: "1 - AWS Principals"
+title: "AWS Principals"
 chapter: false
-weight: 22
+weight: 20
 pre: 
 ---
 

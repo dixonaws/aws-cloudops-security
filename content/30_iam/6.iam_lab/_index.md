@@ -1,7 +1,7 @@
 ---
-title: "6 - IAM Lab"
+title: "IAM Lab"
 chapter: false
-weight: 22
+weight: 25
 pre: 
 ---
 

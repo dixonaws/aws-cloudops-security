@@ -1,7 +1,7 @@
 ---
-title: "0 - Global Infrastructure Security"
+title: "Global Infrastructure Security"
 chapter: false
-weight: 22
+weight: 11
 pre: 
 ---
 

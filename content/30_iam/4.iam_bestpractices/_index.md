@@ -1,7 +1,7 @@
 ---
-title: "4 - IAM Best Practices"
+title: "IAM Best Practices"
 chapter: false
-weight: 22
+weight: 23
 pre: 
 ---
 

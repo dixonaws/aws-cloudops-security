@@ -1,7 +1,7 @@
 ---
 title: "Shared Responsibility Model"
 draft: false
-weight: 11
+weight: 10
 ---
 
 Security and Compliance is a shared responsibility between AWS and the customer. This model can help relieve the customer’s operational burden as AWS operates, manages and controls the components from the host operating system and virtualization layer down to the physical security of the facilities in which the service operates. The customer assumes responsibility and management of the guest operating system (including updates and security patches), other associated application software as well as the configuration of the AWS provided security group firewall. As shown in the chart below, this differentiation of responsibility is commonly referred to as Security “of” the Cloud versus Security “in” the Cloud.
