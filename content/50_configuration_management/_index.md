@@ -1,6 +1,6 @@
 ---
 title: "Configuration Management"
-weight: 1000
+weight: 40
 ---
 
 Continue your discovery of AWS EC2 and Linux!

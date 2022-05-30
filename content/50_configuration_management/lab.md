@@ -1,7 +1,7 @@
 ---
-title: "6 - Lab: Monitoring, Auditing, and Logging"
+title: "Lab: Monitoring, Auditing, and Logging"
 chapter: false
-weight: 22
+weight: 17
 pre: 
 ---
 

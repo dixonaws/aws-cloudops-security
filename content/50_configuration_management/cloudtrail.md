@@ -1,7 +1,7 @@
 ---
-title: "0 - AWS CloudTrail"
+title: "AWS CloudTrail"
 chapter: false
-weight: 22
+weight: 11
 pre: 
 ---
 

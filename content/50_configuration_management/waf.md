@@ -1,7 +1,7 @@
 ---
-title: "4 - AWS WAF"
+title: "AWS WAF"
 chapter: false
-weight: 22
+weight: 15
 pre: 
 ---
 

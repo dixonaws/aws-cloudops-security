@@ -1,7 +1,7 @@
 ---
-title: "1 - AWS CloudWatch"
+title: "AWS CloudWatch"
 chapter: false
-weight: 22
+weight: 12
 pre: 
 ---
 

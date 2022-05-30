@@ -1,6 +1,6 @@
 ---
-title: "3 - Amazon Inspector"
-weight: 22
+title: "Amazon Inspector"
+weight: 13
 ---
 
 Continue your discovery of AWS EC2 and Linux!

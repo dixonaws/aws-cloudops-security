@@ -1,7 +1,7 @@
 ---
-title: "2 - VPC Flow Logs"
+title: "VPC Flow Logs"
 chapter: false
-weight: 22
+weight: 14
 pre: 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Encryption"
 draft: false
-weight: 200
+weight: 30
 pre: ""
 ---
 

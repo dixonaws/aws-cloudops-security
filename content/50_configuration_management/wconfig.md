@@ -1,7 +1,7 @@
 ---
-title: "5 - AWS Config"
+title: "AWS Config"
 chapter: false
-weight: 22
+weight: 16
 pre: 
 ---
 
