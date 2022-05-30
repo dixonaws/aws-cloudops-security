@@ -3,32 +3,19 @@ title: "Security Center"
 weight: 1000
 ---
 
-Continue your discovery of AWS EC2 and Linux!
+Continue your discovery of AWS Security and Compliance!
 <br>
 
-#### Improvements
-  - Make improvements to these pages! Click on "Edit this page" in the upper right corner of a page to 
-    propose improvements, even minor edits like correcting typographical errors. These will 
-    greatly help the next cohort of students to navigate the material.
+Visit the [Security Center](http://aws.amazon.com/security), which is a comprehensive security portal to provide a variety of security notifications,
+information and documentation.
 
-#### Ideas to learn more about Linux and EC2
-We've collected links to resources to help you round out your understanding of running Linux on AWS. 
-- Try the [AWS CloudShell](https://aws.amazon.com/cloudshell/) - a barebones Linux instance that you can access 
-  from the AWS console. Can you use it to login to the EC2 instance you created in this session?
+
+#### Ideas to learn more about Security and Compliance
+We've collected links to resources to help you round out your understanding of security on AWS. 
   
-- Install the AWS Command Line Interface (CLI) and try to run through the steps in this workshop using only
-  the command line.
+- [AWS Security Blog](http://blogs.aws.amazon.com/security/) - Subscribe to the blog – it’s a great way to stay up-to-date on AWS security and compliance.
     
-- One of the first things to try would be to automate steps 1-6 using 
-an AWS tool called [Cloudformation](https://aws.amazon.com/cloudformation/).
+- [Security Resources](http://aws.amazon.com/security/security-resources/) - Developer Information, Articles and Tutorials,
+Security Products, and Whitepapers.
   
-- Dive deep on [Storage Management](/further_reading/storage_management.html) in Linux to prepare for the
-upcoming session on Storage in AWS.
-
-- Dive deep on [User Management in Linux](/further_reading/user_management.html)
-- Looking for more of a challenge? Dig in to Continuous Integration and Continuous Deployment (CI/CD) and Git
-using the links below. Many companies on the cutting edge are adopting CI/CD as a means to develop
-  quality software.
-  
-- Check out some of the HOWTOs on the 
-  [Linux Documentation Project](https://tldp.org/HOWTO/HOWTO-INDEX/howtos.html), particularly [this one](https://tldp.org/HOWTO/From-PowerUp-To-Bash-Prompt-HOWTO.html), a great explanation of the boot sequence of a Linux machine.
+- [List of compliance, assurance programs, and resources.](http://aws.amazon.com/compliance/)
