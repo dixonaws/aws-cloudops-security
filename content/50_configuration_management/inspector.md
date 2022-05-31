@@ -3,32 +3,16 @@ title: "Amazon Inspector"
 weight: 13
 ---
 
-Continue your discovery of AWS EC2 and Linux!
-<br>
+<img src='/images/inspector_logo.png' width='75px'>
 
-#### Improvements
-  - Make improvements to these pages! Click on "Edit this page" in the upper right corner of a page to 
-    propose improvements, even minor edits like correcting typographical errors. These will 
-    greatly help the next cohort of students to navigate the material.
+Amazon Inspector is a vulnerability management service that continuously scans your AWS workloads for vulnerabilities. Amazon Inspector automatically discovers and scans Amazon EC2 instances and container images residing in Amazon Elastic Container Registry (Amazon ECR) for software vulnerabilities and unintended network exposure.
 
-#### Ideas to learn more about Linux and EC2
-We've collected links to resources to help you round out your understanding of running Linux on AWS. 
-- Try the [AWS CloudShell](https://aws.amazon.com/cloudshell/) - a barebones Linux instance that you can access 
-  from the AWS console. Can you use it to login to the EC2 instance you created in this session?
-  
-- Install the AWS Command Line Interface (CLI) and try to run through the steps in this workshop using only
-  the command line.
-    
-- One of the first things to try would be to automate steps 1-6 using 
-an AWS tool called [Cloudformation](https://aws.amazon.com/cloudformation/).
-  
-- Dive deep on [Storage Management](/further_reading/storage_management.html) in Linux to prepare for the
-upcoming session on Storage in AWS.
+When a software vulnerability or network issue is discovered, Amazon Inspector creates a finding. A finding describes the vulnerability, identifies the affected resource, rates the severity of the vulnerability, and provides remediation guidance. 
 
-- Dive deep on [User Management in Linux](/further_reading/user_management.html)
-- Looking for more of a challenge? Dig in to Continuous Integration and Continuous Deployment (CI/CD) and Git
-using the links below. Many companies on the cutting edge are adopting CI/CD as a means to develop
-  quality software.
-  
-- Check out some of the HOWTOs on the 
-  [Linux Documentation Project](https://tldp.org/HOWTO/HOWTO-INDEX/howtos.html), particularly [this one](https://tldp.org/HOWTO/From-PowerUp-To-Bash-Prompt-HOWTO.html), a great explanation of the boot sequence of a Linux machine.
+Additional benefits of Amazon Inspector include:
+
+- Automated discovery and continual scanning that delivers near real-time vulnerability findings
+
+- Central management, configuration, and view of findings for all your organizations’ accounts by setting a Delegated Administrator (DA) account
+
+- A highly contextualized and meaningful Inspector risk score for each finding to help you set more accurate response priorities

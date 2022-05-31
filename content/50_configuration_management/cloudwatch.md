@@ -1,16 +1,16 @@
 ---
-title: "AWS CloudWatch"
+title: "Amazon CloudWatch"
 chapter: false
 weight: 12
 pre: 
 ---
 
-AWS data centers are advanced facilities, comprising innovative architectural and engineering approaches. Amazon has many years of experience in designing and operating large-scale data centers. This experience has been applied to the AWS platform and infrastructure.
+<img src='/images/cwlogo.png' width='75px'>
 
+Amazon CloudWatch is a monitoring and observability service. It provides data and actionable insights to monitor applications, respond to system-wide performance changes, and optimize resource utilization. CloudWatch collects monitoring and operational data in the form of logs, metrics, and events. You get a unified view of operational health and gain complete visibility of your AWS resources, applications, and services running on AWS and on-premises. You can use CloudWatch to detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications running smoothly.
 
-Building | Perimeter and Entry | Security Staff and Surveillance | Two-factor Authentication | Escort
---- | --- | --- | --- | ---
-AWS data centers are housed in nondescript facilities. | Physical access is strictly controlled both at the perimeter and at the building ingress points. | Professional security staff use video surveillance, intrusion detection systems, and other electronic means. |Authorized staff must pass two-factor authentication at least twice to access data center floors. All visitors and contractors are required to present identification. | All visitors are signed in and contrinually escorted by authorized staff. All physical access to data centers is routinely logged and audited. 
+What does it do?
+<img src='/images/cloudwatch1.png' width='400px'>
 
-
-
+How can you use it?
+<img src='/images/cloudwatch2.png' width='600px'>

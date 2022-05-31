@@ -5,12 +5,16 @@ weight: 14
 pre: 
 ---
 
-AWS data centers are advanced facilities, comprising innovative architectural and engineering approaches. Amazon has many years of experience in designing and operating large-scale data centers. This experience has been applied to the AWS platform and infrastructure.
+VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. Flow log data can be published to Amazon CloudWatch Logs or Amazon S3. After you create a flow log, you can retrieve and view its data in the chosen destination.
 
+Flow logs can help you with a number of tasks, such as:
 
-Building | Perimeter and Entry | Security Staff and Surveillance | Two-factor Authentication | Escort
---- | --- | --- | --- | ---
-AWS data centers are housed in nondescript facilities. | Physical access is strictly controlled both at the perimeter and at the building ingress points. | Professional security staff use video surveillance, intrusion detection systems, and other electronic means. |Authorized staff must pass two-factor authentication at least twice to access data center floors. All visitors and contractors are required to present identification. | All visitors are signed in and contrinually escorted by authorized staff. All physical access to data centers is routinely logged and audited. 
+- Diagnosing overly restrictive security group rules
 
+- Monitoring the traffic that is reaching your instance
 
+- Determining the direction of the traffic to and from the network interfaces
 
+Below is an example of a VPC flow log record:
+
+ <img src='/images/vpc_flowlog.png' width='600px'>
