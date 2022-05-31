@@ -14,6 +14,3 @@ Your user needs to view some information stored in a S3 bucket. Which permission
 
 <img src='/images/encryption_q2.png' width='600px'>
 
-You have several IAM users defined in AWS accounts. For auditing purpose, you need to ensure that all calls to AWS IAM are logged. How can you achieve this?
-
-<img src='/images/encryption_q3.png' width='600px'>
